@@ -22,7 +22,7 @@ rt4=p_length/2;
 D_r=0.0015/2;
 D_p=0.0005/2;
 
-alpha_0=192.5;
+alpha_0=192;
 
 % State Space Initialization
 
