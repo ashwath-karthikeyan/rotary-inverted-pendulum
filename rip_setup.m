@@ -38,15 +38,10 @@ m_p=p_mass;
 r_p=p_rad/100;
 J_p=(1/4)*m_p*r_p^2+(1/3)*m_p*L_p^2;% pendulum moment of inertia
 
-% System linearized at [0 0 0 0]' or [0 pi 0 0]'
-% For [0 0 0 0]' set l=1 For comparing state-space and nonlinear model
-% For [0 pi 0 0]' set l=-1 (for controller design)
-l=-1;
-
-M=[m_p*L_r^2+J_r -l*0.5*m_p*L_p*L_r;
-   l*0.5*m_p*L_p*L_r J_p+0.25*m_p*L_p^2];
+M=[m_p*L_r^2+J_r 0.5*m_p*L_p*L_r;
+   -0.5*m_p*L_p*L_r J_p+0.25*m_p*L_p^2];
 G=[D_r+kt*km/R 0;0 D_p];
-K=[0 0;0 l*0.5*m_p*L_p*9.8];
+K=[0 0;0 -0.5*m_p*L_p*9.8];
 F=[kt/R;0];
 
 %Linearized System Matrices
