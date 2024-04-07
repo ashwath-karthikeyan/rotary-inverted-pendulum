@@ -1,17 +1,17 @@
-% Pendulum Initialization
+%% RIP Initialization
 
 % Motor 
 kt=0.042;% torque constant
 km=0.042;% motor back-emf constant
 R=8.4;% terminal resistance
 L=0.85e-3;% terminal inductance
-
-% Inverted Pendulum Parameters
 base_size=7; % length of pendulum base cube
+
 % Rotary arm parameters
 rod_rad=1;% rotary arm radius
 rod_length=8.5;% rotary arm length
 rod_mass=0.095;% rotary arm mass
+
 % Pendulum parameters
 p_rad=1;% pendulum radius
 p_length=12.9;% pendulum length
@@ -24,15 +24,12 @@ D_p=0.0005/2;
 
 alpha_0=192;
 
-% State Space Initialization
-
-% Inverted Pendulum Parameters
-% Rotary arm parameters
-L_r=rod_length/100;%convert cm to m
-r_r=rod_rad/100;%convert cm to m
+% Arm parameters
+L_r=rod_length/100;%cm to m
+r_r=rod_rad/100;%cm to m
 m_r=rod_mass;
 J_r=(1/4)*m_r*r_r^2+(1/3)*m_r*L_r^2;% rotary arm moment of inertia
-% Pendulum parameters
+
 L_p=p_length/100;
 m_p=p_mass;
 r_p=p_rad/100;
